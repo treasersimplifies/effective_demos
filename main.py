@@ -36,7 +36,7 @@ print('=====rule no.9=====')
 a = []
 b = []
 i = 0
-points = ((a[4*i+3], a[4*i+4]) for a[i] in open('test.txt'))
+points = ((a[4*i+3], a[4*i+4]) for a[i] in open('files/test.txt'))
 print(points)
 
 # rule no.10 enumerate(generator) displaces range
@@ -53,7 +53,7 @@ for movie,director in zip(movie_list, director_list):
 
 # rule no.13 try/except/else/finally
 print('=====rule no.13=====')
-test_handld = open('test.txt')
+test_handld = open('files/test.txt')
 try:
     data1 = test_handld.read()
     print(data1)
@@ -82,7 +82,7 @@ result = index_words(text)   # 比较奇怪的是为什么开头的F也算在内
 print(result[:3])
 result = list(index_words_iter(text))   # 将generator变成list
 print(result[:3])   # same output
-with open('rule16.txt', 'r') as f:
+with open('files/rule16.txt', 'r') as f:
     it = index_file(f)  # 将generator直接转化为list会变成0，试过了
     result = list(it)
     print(result[:3])
@@ -91,10 +91,10 @@ with open('rule16.txt', 'r') as f:
 print('=====rule no.17=====')
 result = norm([15, 35, 80])
 print('result 1 :', result)
-it = read_visits('rule17.txt')
+it = read_visits('files/rule17.txt')
 result = norm_copy(it)
 print('result 2 :', result)
-visits = ReadVisits('rule17.txt')   # new iter
+visits = ReadVisits('files/rule17.txt')   # new iter
 result = norm(visits)   # 这里要传给norm函数，而不是norm_copy，因为后者会复制一个list，导致内存占用较高。
 #  可以直接传一个class进去是因为，传进去后会直接自动调用class.__iter__
 print('result 3 :', result)
