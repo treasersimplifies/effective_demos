@@ -99,6 +99,20 @@ result = norm(visits)   # 这里要传给norm函数，而不是norm_copy，因�
 #  可以直接传一个class进去是因为，传进去后会直接自动调用class.__iter__
 print('result 3 :', result)
 
-# rule no.18-no.21
-print('=====rule no.18=====')
+# rule no.18-no.21 args
+print('=====rule no.18-21=====')
+log("test", 1, 2, 3, 4)   # 参数数量可变的函数
+log_N("time test")  # 有动态默认值的参数
 
+# rule no.22 use class to displace complex directory
+# rule no.23 use function rather than class for port
+# rule no.24 use @classmethod to generator polymorphism object
+# rule no.25 use super to initialize father class
+print('=====rule no.25=====')
+myson = SonOlder([1, 2, 3, 4, 5])
+print(myson.get_value())
+# rule no.26 use Mix-in when it comes to polymorphism about class
+# rule no.27 less private always public , how modify private attribute in python:
+print('=====rule no.27=====')
+dota = Dota('7.07')
+print(dota._Dota__company)   # 如果是 dota.__company 就会出错，但是更具实际的原理 dota._Dota__company 这种写法就能访问这个私有数据

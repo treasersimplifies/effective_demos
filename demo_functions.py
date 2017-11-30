@@ -1,3 +1,4 @@
+import time
 # rule no.15
 def sort_priority3(number, group):
     found = False
@@ -73,3 +74,27 @@ def read_visits(data_path):
     with open(data_path) as f:
         for line in f:
             yield int(line)
+
+# rule no.18-no.21
+
+
+# dynamic numbers of args function:
+def log(message, *values):
+    if not values:
+        print(message)
+    else:
+        for value in values:
+            print(value, ' : ', message)
+
+
+# key args function:
+def log_N(message, when=None):
+    '''Log a message with a timestamp
+    Args
+    :param message: message to print
+    :param when: time of when the msg occurred
+    :return: none
+    '''
+    when = time.ctime() if when is None else when
+    print('%s : %s' %(when, message))
+
